@@ -5,4 +5,4 @@
   :license "LLGPL"
   :components ((:file "fset"))
   :serial t
-  :depends-on (:iterate :modf :fset) )
+  :depends-on (:modf :fset) )
