@@ -39,15 +39,3 @@
 (define-modf-rewrite fset:tail (expr)
   `(fset:less-first ,@(rest expr)) )
 
-;; @<<fset:arb>> works with everything.  To be clear, this really doesn't make
-;; the most sense, but it feels like it needs to be here for completeness.  The
-;; issue is that bags and sets have no concept of internal structure, they just
-;; hold objects, so <<modf>> doesn't really make sense at all.  You can,
-;; however, place values into a bag or seq without regard to the internal
-;; structure, which corresponds to pulling out a value from a bag or seq without
-;; regard to internal structure.  Thus <<fset:with>> is the inversion of
-;; <<fset:arb>>.
-
-(define-modf-function fset:arb 1 (new-val collection)
-  (fset:with collection new-val) )
-
